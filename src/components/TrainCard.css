@@ -1,0 +1,120 @@
+.train-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.train-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.train-card-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.train-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.train-card:hover .train-card-image img {
+  transform: scale(1.05);
+}
+
+.train-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #667eea;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.train-card-content {
+  padding: 15px;
+}
+
+.train-route {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.train-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.departure, .arrival {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.departure .time, .arrival .time {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.departure .date, .arrival .date {
+  font-size: 12px;
+  color: #666;
+}
+
+.arrow {
+  font-size: 20px;
+  color: #667eea;
+}
+
+.train-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.train-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.select-btn {
+  width: 100%;
+  padding: 10px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.select-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
