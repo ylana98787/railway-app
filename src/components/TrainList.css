@@ -1,0 +1,13 @@
+.train-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .train-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
