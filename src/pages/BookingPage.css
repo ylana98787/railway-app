@@ -1,0 +1,70 @@
+.booking-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.booking-header {
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding: 8px 0;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.booking-header h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.train-info-booking {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.train-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.train-route {
+  font-size: 18px;
+}
+
+.train-date {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.loading-spinner, .error-state {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}
+
+.error-state {
+  color: #f44336;
+}
+
+@media (max-width: 768px) {
+  .train-info-booking {
+    flex-direction: column;
+    text-align: center;
+  }
+}
