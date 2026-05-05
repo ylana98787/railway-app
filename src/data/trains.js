@@ -19,7 +19,7 @@ export const trains = [
     duration: "10 год 15 хв",
     price: 680,
     carrier: "Укрзалізниця",
-    image: "https://images.pexels.com/photos/2692675/pexels-photo-2692675.jpeg"
+    image: "https://www.rbc.ua/static/img/u/n/unian_209348_id15725_650x410_650x410.jpg"
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ export const trains = [
     duration: "4 год 30 хв",
     price: 890,
     carrier: "Укрзалізниця",
-    image: "https://images.pexels.com/photos/95977/pexels-photo-95977.jpeg"
+    image: "https://tse2.mm.bing.net/th/id/OIP.mCSStvzHD9Ytd-50OvhJ0gHaEU?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const trains = [
     duration: "8 год 30 хв",
     price: 420,
     carrier: "Укрзалізниця",
-    image: "https://images.pexels.com/photos/3993429/pexels-photo-3993429.jpeg"
+    image: "https://transferodessa.com/img/blog/xtaks-odiesa-dn-pro-kishin-v-odiesa-zamovliennia-taks-m-zhm-sto-onlain.jpg.pagespeed.ic.kofWaiKFeL.jpg"
   }
 ];
 
