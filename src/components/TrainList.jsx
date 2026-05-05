@@ -5,7 +5,7 @@ import TrainCard from './TrainCard';
 import './TrainList.css';
 
 // КОМПОНЕНТ TRAIN LIST (СПИСОК ПОТЯГІВ)
-function TrainList({ trains, onSelectTrain }) {
+function TrainList({ trains }) {
   
   // Перевіряємо, чи є потяги в масиві
   if (trains.length === 0) {
@@ -20,11 +20,7 @@ function TrainList({ trains, onSelectTrain }) {
   return (
     <div className="train-list">
       {trains.map((train) => (
-        <TrainCard
-          key={train.id}
-          train={train}
-          onSelect={onSelectTrain}
-        />
+        <TrainCard key={train.id} train={train} />
       ))}
     </div>
   );
