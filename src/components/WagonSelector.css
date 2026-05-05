@@ -1,0 +1,75 @@
+.wagon-selector {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.wagon-selector h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.wagons-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.wagon-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 15px;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.wagon-btn:hover {
+  transform: translateY(-2px);
+  border-color: #667eea;
+}
+
+.wagon-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.wagon-number {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.wagon-type {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.wagon-price {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.wagon-btn.active .wagon-price {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .wagons-list {
+    flex-direction: column;
+  }
+  
+  .wagon-btn {
+    min-width: auto;
+  }
+}
