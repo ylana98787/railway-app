@@ -1,17 +1,29 @@
 // ІМПОРТУЄМО ХУК useState ДЛЯ ЗБЕРІГАННЯ ДАНИХ, ЩО ЗМІНЮЮТЬСЯ
 import { useState } from 'react';
 
+// ІМПОРТУЄМО ХУК useNavigate ДЛЯ НАВІГАЦІЇ НА ІНШІ СТОРІНКИ
+import { useNavigate } from 'react-router-dom';
+
 // ІМПОРТУЄМО КОМПОНЕНТ TRAINLIST ДЛЯ ВІДОБРАЖЕННЯ СПИСКУ ПОТЯГІВ
 import TrainList from '../components/TrainList';
 
 // ІМПОРТУЄМО МАСИВ З ДАНИМИ ПРО ВСІ ПОТЯГИ
 import { trains } from '../data/trains';
 
+// ІМПОРТУЄМО ХУК useBooking ДЛЯ ГЛОБАЛЬНОГО СТАНУ (КОНТЕКСТ)
+import { useBooking } from '../context/BookingContext';
+
 // ІМПОРТУЄМО СТИЛІ ДЛЯ ГОЛОВНОЇ СТОРІНКИ
 import './HomePage.css';
 
 // ОГОЛОШЕННЯ КОМПОНЕНТА ГОЛОВНОЇ СТОРІНКИ
 function HomePage() {
+  
+  // ХУК ДЛЯ НАВІГАЦІЇ (ПЕРЕХІД НА ІНШІ СТОРІНКИ)
+  const navigate = useNavigate();
+  
+  // ГЛОБАЛЬНИЙ СТАН З КОНТЕКСТУ (ФУНКЦІЯ ДЛЯ ЗБЕРЕЖЕННЯ ВИБРАНОГО ПОТЯГА)
+  const { setSelectedTrain } = useBooking();
   
   // СТВОРЮЄМО СТАН ДЛЯ ТЕКСТУ ПОШУКУ
   // searchTerm - змінна, яка зберігає текст пошуку
@@ -24,6 +36,13 @@ function HomePage() {
   // setFilteredTrains - функція для зміни filteredTrains
   // trains - початкове значення (ВСІ потяги)
   const [filteredTrains, setFilteredTrains] = useState(trains);
+
+  // ФУНКЦІЯ ДЛЯ ОБРОБКИ ВИБОРУ ПОТЯГА
+  // ЗБЕРІГАЄ ВИБРАНИЙ ПОТЯГ В ГЛОБАЛЬНИЙ СТАН І ПЕРЕХОДИТЬ НА СТОРІНКУ БРОНЮВАННЯ
+  const handleSelectTrain = (train) => {
+    setSelectedTrain(train);  // ЗБЕРІГАЄМО В ГЛОБАЛЬНИЙ СТАН
+    navigate(`/booking/${train.id}`);  // ПЕРЕХІД НА СТОРІНКУ БРОНЮВАННЯ
+  };
 
   // ФУНКЦІЯ ДЛЯ ОБРОБКИ ПОШУКУ (ВИКЛИКАЄТЬСЯ ПРИ ВВЕДЕННІ ТЕКСТУ)
   // e - об'єкт події (містить інформацію про те, що ввів користувач)
@@ -96,8 +115,8 @@ function HomePage() {
       {/* trains={filteredTrains} - список відфільтрованих потягів         */}
       {/* onSelectTrain={handleSelectTrain} - функція для вибору потяга     */}
       <TrainList 
-        trains={filteredTrains} 
-        onSelectTrain={handleSelectTrain} 
+        trains={filteredTrains}
+        onSelectTrain={handleSelectTrain}
       />
       
     </div>
